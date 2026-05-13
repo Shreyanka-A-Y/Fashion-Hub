@@ -1,0 +1,149 @@
+/* ================= THEME VARIABLES ================= */
+:root {
+    --bg: #fdfcfd;
+    --text: #1e1e24;
+    --muted: #6f6a78;
+    --accent: #8b6cff;
+    --accent-hover: #7052df;
+    --white: #ffffff;
+    --shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* ================= LAYOUT ================= */
+.container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 5%;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* ================= IMAGE SECTION ================= */
+.image-container {
+    background: #f3f0f7;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-image:hover {
+    transform: scale(1.03);
+}
+
+/* ================= DETAILS SECTION ================= */
+.product-details {
+    padding-top: 20px;
+}
+
+.brand-tag {
+    display: inline-block;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+.product-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin: 0 0 15px 0;
+    line-height: 1.1;
+    color: var(--text);
+}
+
+.price-tag {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text);
+    display: block;
+    margin-bottom: 30px;
+}
+
+.divider {
+    height: 1px;
+    background: #eee;
+    margin: 30px 0;
+}
+
+.description-heading {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.description-text {
+    line-height: 1.8;
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+}
+
+/* ================= STOCK & BUTTON ================= */
+.stock-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    font-size: 0.95rem;
+}
+
+.stock-dot {
+    width: 8px;
+    height: 8px;
+    background: #27ae60;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #27ae60;
+}
+
+.add-to-cart-btn {
+    display: block;
+    background: var(--accent);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(139, 108, 255, 0.25);
+}
+
+.add-to-cart-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(139, 108, 255, 0.35);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .product-title {
+        font-size: 2.2rem;
+    }
+    
+    .image-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}

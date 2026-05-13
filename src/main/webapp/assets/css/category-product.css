@@ -1,0 +1,212 @@
+
+/* ================= THEME ================= */
+:root {
+    --bg: #f6f3f8;
+    --surface: #ffffff;
+
+    --text: #1e1e24;
+    --muted: #6f6a78;
+
+    --accent: #8b6cff;
+    --accent-soft: rgba(139, 108, 255, 0.12);
+
+    --shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ================= BASE ================= */
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ================= WRAPPER ================= */
+.shop-wrapper {
+    padding: 80px 5%;
+}
+
+/* ================= HEADER ================= */
+.editorial-header {
+    max-width: 1200px;
+    margin: 0 auto 70px auto;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    border-left: 3px solid var(--accent);
+    padding-left: 22px;
+}
+
+.editorial-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin: 0;
+    line-height: 1;
+    color: var(--text);
+}
+
+.collection-count {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* ================= GRID ================= */
+.editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
+    gap: 40px 28px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ================= CARD ================= */
+.lux-card {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+
+    display: block;
+    overflow: hidden;
+
+    transition: 0.3s ease;
+}
+
+/* hover lift (NEW UX FEEL) */
+.lux-card:hover {
+    transform: translateY(-6px);
+}
+
+/* IMAGE */
+.image-wrap {
+    position: relative;
+    width: 100%;
+    height: 420px;
+
+    background: #ece7f3;
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
+}
+
+.image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: 0.5s ease;
+}
+
+/* image zoom */
+.lux-card:hover img {
+    transform: scale(1.06);
+}
+
+/* ================= CONTENT ================= */
+.card-content {
+    padding: 18px 6px;
+}
+
+.brand-label {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: var(--accent);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.item-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin: 0;
+
+    font-weight: 500;
+
+    transition: 0.3s ease;
+    color: var(--text);
+}
+
+.lux-card:hover .item-title {
+    color: var(--accent);
+}
+
+.item-price {
+    font-size: 1.1rem;
+    margin-top: 10px;
+
+    font-weight: 600;
+    color: var(--muted);
+}
+
+/* ================= VIEW INDICATOR ================= */
+.view-indicator {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+
+    width: 46px;
+    height: 46px;
+
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transform: translateY(18px);
+
+    transition: 0.3s ease;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    color: var(--accent);
+}
+
+.lux-card:hover .view-indicator {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= EMPTY STATE ================= */
+.empty-state {
+    text-align: center;
+    padding: 120px 0;
+}
+
+.empty-state h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--text);
+}
+
+.empty-state p {
+    color: var(--muted);
+    margin-top: 15px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+    .editorial-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .image-wrap {
+        height: 320px;
+    }
+}

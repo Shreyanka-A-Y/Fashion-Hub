@@ -1,0 +1,179 @@
+
+/* ================= GOOGLE FONT ================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+/* ================= DESIGN TOKENS (DARK + WHITE SYSTEM) ================= */
+:root {
+
+    /* background system */
+    --bg: #0f1115;              /* soft dark background */
+    --surface: #ffffff;         /* clean white cards */
+    --surface-dark: #171a21;    /* optional dark card */
+
+    /* text system */
+    --text: #f5f7fa;            /* main text on dark bg */
+    --muted: #a1a7b3;           /* secondary text */
+
+    /* accent (kept subtle, not loud purple anymore) */
+    --accent: #ffffff;          /* minimal premium feel */
+    --accent-soft: rgba(255,255,255,0.08);
+
+    /* effects */
+    --shadow: 0 18px 50px rgba(0,0,0,0.45);
+    --soft-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
+    --radius: 16px;
+}
+
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* ================= LINKS ================= */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ================= BUTTONS ================= */
+.btn-primary {
+    background: #ffffff;
+    color: #0f1115;
+
+    padding: 14px 32px;
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+
+    display: inline-block;
+
+    box-shadow: var(--soft-shadow);
+
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+
+    color: var(--text);
+
+    padding: 14px 32px;
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #ffffff;
+    color: #0f1115;
+}
+
+/* ================= HERO ================= */
+.hero {
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 72px);
+    color: var(--text);
+}
+
+.hero p {
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+/* ================= FEATURES ================= */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap : 20px;
+    padding : 20px;
+}
+
+.feature-card {
+    background: var(--surface);
+    color: #0f1115;
+
+    padding: 70px 40px;
+
+    text-align: center;
+
+    border-radius: var(--radius);
+    box-shadow: var(--soft-shadow);
+
+    transition: 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+}
+
+.feature-card h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #555;
+    font-size: 14px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #0b0d11;
+    text-align: center;
+
+    padding: 40px 0;
+    margin-top: 60px;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    color: var(--muted);
+}
+
+/* ================= UTILITY ================= */
+.text-muted {
+    color: var(--muted);
+}
+
+.shadow {
+    box-shadow: var(--shadow);
+}
+
+.card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--soft-shadow);
+    color: #0f1115;
+}

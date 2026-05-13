@@ -1,0 +1,265 @@
+/* FASHIONHUB ADMIN MASTER CSS 
+   Includes: Layout, Dashboard, Users, Products, and Login
+*/
+@import
+	url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap')
+	;
+
+:root {
+	--side-nav: #0f172a; /* Deep Navy */
+	--bg-page: #f1f5f9; /* Light Slate Background */
+	--card-white: #ffffff;
+	--indigo-primary: #6366f1; /* Main Brand Color */
+	--text-dark: #1e293b;
+	--text-muted: #64748b;
+	--border: #e2e8f0;
+	--gold: #f59e0b; /* Coin Icon Gold */
+	--danger: #ef4444; /* Reject/Logout Red */
+	--success: #22c55e; /* Approve/Active Green */
+}
+
+/* --- GLOBAL RESET --- */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	background-color: var(--bg-page);
+	color: var(--text-dark);
+	line-height: 1.6;
+}
+
+/* --- ADMIN LAYOUT (GRID) --- */
+.admin-layout {
+	display: grid;
+	grid-template-columns: 260px 1fr;
+	min-height: 100vh;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+	background-color: var(--side-nav);
+	color: white;
+	padding: 40px 20px;
+	height: 100vh;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+.sidebar-brand {
+	font-size: 22px;
+	font-weight: 800;
+	margin-bottom: 40px;
+}
+
+.sidebar-brand span {
+	color: var(--indigo-primary);
+}
+
+.nav-links a {
+	display: flex;
+	align-items: center;
+	color: #94a3b8;
+	text-decoration: none;
+	padding: 12px 16px;
+	border-radius: 12px;
+	margin-bottom: 8px;
+	font-size: 14px;
+	font-weight: 600;
+	transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+	background: rgba(255, 255, 255, 0.1);
+	color: white;
+}
+
+.nav-links a.active {
+	background: var(--indigo-primary);
+}
+
+/* --- MAIN CONTENT --- */
+.main-wrapper {
+	padding: 50px;
+}
+
+.header-section {
+	margin-bottom: 35px;
+}
+
+.header-section h1 {
+	font-size: 32px;
+	font-weight: 800;
+	letter-spacing: -1px;
+}
+
+.header-section p {
+	color: var(--text-muted);
+}
+
+/* --- DASHBOARD STATS --- */
+.stat-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 24px;
+	margin-bottom: 40px;
+}
+
+.stat-card {
+	background: var(--card-white);
+	padding: 30px;
+	border-radius: 20px;
+	border: 1px solid var(--border);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.stat-card h3 {
+	font-size: 12px;
+	color: var(--text-muted);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.stat-card .value {
+	font-size: 32px;
+	font-weight: 800;
+	margin-top: 10px;
+}
+
+/* --- DATA CARDS & TABLES --- */
+.data-card {
+	background: var(--card-white);
+	border: 1px solid var(--border);
+	border-radius: 20px;
+	padding: 30px;
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.premium-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.premium-table th {
+	text-align: left;
+	padding: 15px 20px;
+	font-size: 11px;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: var(--text-muted);
+	border-bottom: 2px solid var(--bg-page);
+}
+
+.premium-table td {
+	padding: 20px;
+	border-bottom: 1px solid var(--bg-page);
+	font-size: 14px;
+}
+
+/* --- VISIBILITY HELPERS --- */
+.coin-value {
+	color: var(--gold);
+	font-weight: 800;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.badge-status {
+	background: #f0fdf4;
+	color: #166534;
+	padding: 5px 12px;
+	border-radius: 8px;
+	font-weight: 700;
+	font-size: 11px;
+	border: 1px solid #dcfce7;
+}
+
+.badge-condition {
+	background: #eff6ff;
+	color: #1e40af;
+	padding: 5px 12px;
+	border-radius: 8px;
+	font-weight: 700;
+	font-size: 11px;
+	text-transform: uppercase;
+}
+
+/* --- FORMS --- */
+.form-group {
+	margin-bottom: 20px;
+}
+
+.form-group label {
+	display: block;
+	font-weight: 700;
+	font-size: 14px;
+	margin-bottom: 8px;
+}
+
+.form-control {
+	width: 100%;
+	padding: 12px 16px;
+	border-radius: 10px;
+	border: 1px solid var(--border);
+	font-family: inherit;
+}
+
+.form-control:focus {
+	outline: none;
+	border-color: var(--indigo-primary);
+	box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+/* --- BUTTONS --- */
+.btn-submit {
+	background: var(--indigo-primary);
+	color: white;
+	padding: 14px;
+	border: none;
+	border-radius: 12px;
+	font-weight: 700;
+	cursor: pointer;
+	width: 100%;
+}
+
+.btn-action {
+	padding: 8px 16px;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 13px;
+}
+
+.btn-approve {
+	background: var(--indigo-primary);
+	color: white;
+}
+
+.btn-reject {
+	color: var(--danger);
+	border: 1px solid #fee2e2;
+	margin-left: 8px;
+}
+
+/* --- LOGIN PAGE SPECIFIC --- */
+.login-body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-color: var(--side-nav);
+}
+
+.login-card {
+	background: white;
+	padding: 40px;
+	border-radius: 24px;
+	width: 100%;
+	max-width: 400px;
+	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
